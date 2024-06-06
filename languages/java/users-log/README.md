@@ -1,0 +1,2 @@
+# Solution
+ - Create a aplication witch receive many log users. A log have username and access date. This application must read many logs from file and print how many different users accessed the website.

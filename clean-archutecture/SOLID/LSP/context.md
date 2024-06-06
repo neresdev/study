@@ -1,0 +1,3 @@
+# LSP (Liskov Substitution Principle)
+ - This principle means that if the super class is replaced by child class, the application behavior dont will be changed
+ - Example, if I save a super class named BookService and inside there I have a processBook that return a boolean, but in child class I add a validation in this method where can return boolean or a exception, this is wrong, the method overriding must have same returns and throwables (if it exists)

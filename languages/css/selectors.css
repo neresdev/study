@@ -1,0 +1,28 @@
+/* simple selector */
+p { /* seletor por tag */
+        color: red;
+}
+
+#p { /* seletor por ID, no atributo
+ "id" no HTML usado para selecionar apenas UM elemento */
+        color: red;
+}
+.p      {
+        color: red;
+}
+
+/* id selector */
+p.center#aidi {
+        text-align: center;
+        color: red;		
+}
+
+/* universal selector */
+* {
+        text-align: center;
+        color: blue;
+}
+/* grid selector */
+h1, h2, p{
+        text-align: center	
+}

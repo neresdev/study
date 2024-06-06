@@ -1,0 +1,9 @@
+
+- difference between abstract class and interface
+    - abstract class is for reuse and interface for contract to be fulfilled, see the example:
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/658b0537-3080-4f00-936e-a3e1f0ec4bfc/a31860c5-5ebc-4c5b-91e7-81346a4e1652/Untitled.png)
+    
+    in this case, shape is an abstract class and is extended by Rectangle and Circle class and TaxService is an interface and is implemented by BrazilTaxService and UsaTaxService
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/658b0537-3080-4f00-936e-a3e1f0ec4bfc/9e366d99-9afe-4b7a-a7ac-a46b5f2cff9a/Untitled.png)

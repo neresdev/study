@@ -1,0 +1,22 @@
+# Map
+ - Is a Key, Value Collection
+ - The Key and Value can be of any type
+ - Can't repeat the Key
+ - Don't have position
+ - Usages
+   - Cookies
+   - Local Storage
+   - Any Key Value model
+ - Main implementations
+   - HashMap (more fast)
+   - TreeMap (more slower)
+   - LinkedHashMap intermediate speed
+ - Important methods
+   - put (use equals and hashCode to compare, if these functions does not exists, pointer comparison is used)
+   - remove
+   - contains
+   - get
+   - clear
+   - size
+   - keySet
+   - values

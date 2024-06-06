@@ -1,0 +1,4 @@
+Computer,890.50
+Iphone X, 910.00
+Iphone 12, 123123123.00
+Tablet, 550.00

@@ -1,0 +1,2 @@
+# ISP (Interface Segregation Principle)
+ - This principle means that class witch implement interfaces shuld not implement unnecessary methods, if this is happening, create other interfaces to isolate this methods

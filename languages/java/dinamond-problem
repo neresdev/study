@@ -1,0 +1,36 @@
+- Diamond problem (translate to english)
+    
+    Basicamente, o problema do diamante acontece quando temos 1 classe que precisa extender 2 classes.
+    
+    Exemplo:
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/658b0537-3080-4f00-936e-a3e1f0ec4bfc/8d508c70-7215-475b-afe1-661db078afd0/Untitled.png)
+    
+    Embora a linguagem Java não permita a herança múltipla, a mesma permite a implementação múltipla, então a solução foi a seguinte:
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/658b0537-3080-4f00-936e-a3e1f0ec4bfc/8ede5a4b-3aff-4fda-a0b6-e0159dc9a85b/Untitled.png)
+    
+    Com isso a solução foi criar interfaces contendo os métodos particulares de cada animal (correr, para o leão, nadar, para o peixe e voar para o pássaro) e em cada animal, estender o método da classe abstrata (comer) e implementar seu respectivo método, como o pato faz as 3 coisas, o mesmo vai implementar os 3 métodos (correr, nadar e voar)
+    
+- Comparable interface
+    
+    This interface is used to when is necessary to compare a class.
+    
+    For example, you have a .csv file which contains names and salaries:
+    
+    - David,1500.00
+    - Neres,5000.00
+    - Souza,7000.00
+    - De,50000.00
+    
+    In This case, we have a class named Employee where we have two variables, one called name (String) and other called salary (Double). Is necessáry read this .csv file and put all lines inside a list.
+    
+    For do that, the Employee class needs to implement Comparable interface:
+    
+    - `public class Employee implements Comparable{ . . . }`
+    
+    To be able to call the `Collections.sort(List<T extends Comparable> t)` function, where this function receives a list of T type and it extends (or implement) a Comparable interface.
+    
+    Implementing this interface, the class have to override the metod compareTo and specify how this comparision will work, see the image below:
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/658b0537-3080-4f00-936e-a3e1f0ec4bfc/9837455d-9ec8-46bc-9e2c-bb1557b97c1e/Untitled.png)
