@@ -6,10 +6,10 @@ import java.sql.SQLException;
 import java.util.logging.Logger;
 
 import db.DB;
+import db.DbIntegratyException;
 
-public class ExampleUpdate {
-
-    private static Logger log = Logger.getLogger(ExampleUpdate.class.getName());
+public class ExampleDelete {
+    private static Logger log = Logger.getLogger(ExampleDelete.class.getName());
 
     public static void main(String[] args) {
         Connection conn = null;
@@ -18,22 +18,19 @@ public class ExampleUpdate {
             conn = DB.getConnection();
 
             st = conn.prepareStatement(
-                "UPDATE seller "
-                + "SET BaseSalary = BaseSalary + ? "
-                + "WHERE "
-                + "(DepartmentId = ?)");
+            "DELETE FROM department "
+            + "WHERE "
+            + "Id = ?");
             
-            st.setDouble(1, 200.0);
-            st.setInt(2, 2);
+            st.setInt(1, 2);
 
             int rowsAffected = st.executeUpdate();
             log.info("Done! Rows affected: " + rowsAffected);
         }catch(SQLException e){
-            e.printStackTrace();
+            throw new DbIntegratyException(e.getMessage());
         }finally{
             DB.closeStatement(st);
             DB.closeConnection();
         }
     }
-    
 }
