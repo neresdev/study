@@ -23,15 +23,17 @@
 
 # GET http://localhost:8080/users/1
 
-# PUT http://localhost:8080/users/1
-# Content-Type: application/json
+PUT http://localhost:8080/users/54
+Content-Type: application/json
 
-# {
-#     "name": "Maria aaa",
-#     "email": "aaaaa@aaa.com",
-#     "phone": "aa"
-# }
+{
+    "name": "Maria aaa",
+    "email": "aaaaa@aaa.com",
+    "phone": "aa"
+}
 
 
 
-# DELETE http://localhost:8080/users/4
+# DELETE http://localhost:8080/users/1
+
+# GET http://localhost:8080/users/132
