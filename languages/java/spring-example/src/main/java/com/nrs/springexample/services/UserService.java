@@ -22,4 +22,24 @@ public class UserService {
     public User findById(Long id){
         return repository.findById(id).orElse(null);
     }
+
+    public User insert(User user){
+       return repository.save(user);
+    }
+
+    public void delete(Long id){
+        repository.deleteById(id);
+    }
+
+    public User update(Long id, User user){
+        User monitoredUser = repository.getReferenceById(id);
+        updateData(monitoredUser, user);
+        return repository.save(monitoredUser);
+    }
+
+    private void updateData(User monitoredUser, User user) {
+        monitoredUser.setName(user.getName());
+        monitoredUser.setEmail(user.getEmail());
+        monitoredUser.setPhone(user.getPhone());
+    }
 }
