@@ -8,13 +8,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nrs.springmongo.domain.User;
+import com.nrs.springmongo.services.UserService;
+
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/users")
+@RequiredArgsConstructor
 public class UserResource {
+
+    private final UserService service;
 
     @GetMapping
     public ResponseEntity<List<User>> findAll(){
-        return ResponseEntity.ok().body(List.of(new User("qdfqwf", "Maria", "Email"), new User("qdfqwf", "deivao", "neresdev@gmail.com")));
+        return ResponseEntity.ok().body(service.findAll());
     }
 }
