@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.nrs.springmongo.domain.User;
+import com.nrs.springmongo.dto.UserDTO;
 import com.nrs.springmongo.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -15,7 +16,7 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public List<User> findAll(){
-        return userRepository.findAll();
+    public List<UserDTO> findAll(){
+        return userRepository.findAll().stream().map(UserDTO::new).toList();
     }
 }
