@@ -1,3 +1,14 @@
-# GET http://localhost:8080/users
+GET http://localhost:8080/users
 
-GET http://localhost:8080/users/667c3dd06d0a7903f94f64c2a
+# GET http://localhost:8080/users/667c3dd06d0a7903f94f64c2a
+
+
+# POST http://localhost:8080/users
+# Content-Type: application/json
+
+# { 
+#     "name": "neres", 
+#     "email": "neresdev@gmail.com"
+# } 
+
+# GET http://localhost:8080/users/667c408e6f61f758e0775783

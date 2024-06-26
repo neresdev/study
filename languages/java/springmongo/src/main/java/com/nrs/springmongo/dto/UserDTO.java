@@ -2,7 +2,6 @@ package com.nrs.springmongo.dto;
 
 import java.io.Serializable;
 
-import org.springframework.data.annotation.Id;
 
 import com.nrs.springmongo.domain.User;
 
