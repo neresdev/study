@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,7 +33,7 @@ public class UserResource {
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<UserDTO> findById(@PathVariable String id){
-        return ResponseEntity.ok().body(service.findById(id));
+        return ResponseEntity.ok().body(new UserDTO(service.findById(id)));
     }
 
     @PostMapping
@@ -40,6 +41,12 @@ public class UserResource {
         var userCreated = service.insert(userDTO);
         var uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(userCreated.getId()).toUri();
         return ResponseEntity.created(uri).body(userCreated);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<UserDTO> put(@RequestBody UserDTO userDTO, @PathVariable String id){
+        service.update(userDTO);
+        return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/{id}")
