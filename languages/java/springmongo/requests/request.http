@@ -2,6 +2,8 @@ GET http://localhost:8080/users
 
 # GET http://localhost:8080/users/667c3dd06d0a7903f94f64c2a
 
+# DELETE http://localhost:8080/users/667c4193e7cae577bdf70692
+
 
 # POST http://localhost:8080/users
 # Content-Type: application/json
