@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.nrs.springmongo.domain.Post;
 import com.nrs.springmongo.dto.UserDTO;
 import com.nrs.springmongo.services.UserService;
 
