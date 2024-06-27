@@ -55,4 +55,9 @@ public class UserResource {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping(value = "/{id}/posts")
+    public ResponseEntity<List<Post>> findPosts(@PathVariable String id){
+        return ResponseEntity.ok().body(service.findById(id).getPosts());
+    }
 }

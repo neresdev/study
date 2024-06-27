@@ -1,6 +1,7 @@
-GET http://localhost:8080/users
+# GET http://localhost:8080/users
 
-# GET http://localhost:8080/users/667c4624ce9fa375a79052f7
+# GET http://localhost:8080/users/667caee8424f567eaa3ea8d1/posts
+# GET http://localhost:8080/users/
 
 # DELETE http://localhost:8080/users/667c4193e7cae577bdf70692
 
