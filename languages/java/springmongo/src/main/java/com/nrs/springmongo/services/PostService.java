@@ -5,10 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.nrs.springmongo.domain.Post;
-import com.nrs.springmongo.domain.User;
-import com.nrs.springmongo.dto.UserDTO;
 import com.nrs.springmongo.repository.PostRepository;
-import com.nrs.springmongo.repository.UserRepository;
 import com.nrs.springmongo.services.exception.ObjectNotFoundException;
 
 import lombok.RequiredArgsConstructor;
@@ -24,4 +21,8 @@ public class PostService {
         return postRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException(String.format(OBJECT_NOT_FOUND_MESSAGE, id)));
     }
 
+    public List<Post> findByTitle(String text){
+        return postRepository.findByTitleContainingIgnoreCase(text);
     }
+
+}

@@ -1,1 +1,3 @@
-GET http://localhost:8080/posts/667d7136955dbf422c743264
+# GET http://localhost:8080/posts/667d7136955dbf422c743264
+
+GET http://localhost:8080/posts/titlesearch?text=bom%20dia
