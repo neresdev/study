@@ -29,15 +29,10 @@ public class Main {
 
                 ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
                 if("a" == "b") break;
-            }catch(ChessException e){
-                System.out.println(e.getMessage());
-                sc.nextLine();
-            }catch(InputMismatchException e){
+            }catch(ChessException | InputMismatchException e){
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }
         }
-
-        
     }
 }
