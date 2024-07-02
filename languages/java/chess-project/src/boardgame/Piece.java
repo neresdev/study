@@ -6,7 +6,7 @@ public abstract class Piece {
 
     private Board board;
 
-    public Piece(Board board) {
+    protected Piece(Board board) {
         this.board = board;
         position = null;
     }
