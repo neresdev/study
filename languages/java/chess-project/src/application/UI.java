@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 import chess.ChessMatch;
 import chess.ChessPiece;
-import chess.ChessPostition;
+import chess.ChessPosition;
 import chess.Color;
 
 public class UI {
@@ -36,12 +36,12 @@ public class UI {
         System.out.flush();
     }
 
-    public static ChessPostition redChessPosition(Scanner sc){
+    public static ChessPosition redChessPosition(Scanner sc){
         try{
             String s = sc.nextLine();
             char column = s.charAt(0);
             int row = Integer.parseInt(s.substring(1));
-            return new ChessPostition(column, row);
+            return new ChessPosition(column, row);
         }catch(RuntimeException e){
             throw new InputMismatchException("Error reading ChessPosition. Valid values are from a1 to h8.");
         }
@@ -54,6 +54,9 @@ public class UI {
         printCapturedPieces(captured);
         System.out.println("Turn: " + chessMatch.getTurn());
         System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
+        if(chessMatch.getCheck()){
+            System.out.println("CHECK!");
+        }
     }
 
     public static void printBoard(ChessPiece[][] pieces){
