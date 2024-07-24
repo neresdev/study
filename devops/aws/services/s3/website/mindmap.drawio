@@ -1,0 +1,44 @@
+<mxfile host="65bd71144e">
+    <diagram id="XxCjNsHI_Is_cMPgGQvg" name="Page-1">
+        <mxGraphModel dx="1066" dy="682" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="5000" pageHeight="5000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="9" style="edgeStyle=none;html=1;fontSize=20;" edge="1" parent="1" source="8" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="500" width="290" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=none;html=1;fontSize=20;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="4" target="11">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="770" y="320" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="website (s3 bucket)" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.bucket;fillColor=#E05243;gradientColor=none;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="290" y="40" width="290" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="index.html" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.document;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="385" y="160" width="105" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="520" width="78" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/site_collection.svg;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="540" width="50" height="47" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=none;html=1;fontSize=20;" edge="1" parent="1" source="11" target="8">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="320" y="570" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="URL única" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="810" y="310" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="concede a permissão de acesso" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=20;rotation=-20;" vertex="1" parent="1">
+                    <mxGeometry x="385" y="460" width="310" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

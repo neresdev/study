@@ -1,0 +1,7 @@
+- Permite que os servidores on premisse possam acessar os serviços de storage (como o s3 por exemplo), fazendo um "sync" do servidor da sua empresa com o s3 bucket
+- Possui tambem o sistema de cache (ajudando a diminuir a latencia)
+- É possivel utilizalo como
+  - File gateway (como o s3)
+  - Volume gateway (como um block storage)
+  - Backup gateway (ambos, tanto block storage quanto um s3)
+- É beeem mais rápido do que o servidor da empresa acessando o s3 diretamente

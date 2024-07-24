@@ -1,0 +1,1 @@
+# Objetivo: Criar um site estático no s3
