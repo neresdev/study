@@ -1,0 +1,136 @@
+<mxfile host="65bd71144e">
+    <diagram id="ITYFV0P3QFA1198J0-Kh" name="Page-1">
+        <mxGraphModel dx="4337" dy="1949" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="5000" pageHeight="5000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Scaling" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=40;" vertex="1" parent="1">
+                    <mxGeometry x="1140" y="130" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="UP (ou escala vertical) - Tudo em uma instância só" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=40;" vertex="1" parent="1">
+                    <mxGeometry x="215" y="390" width="930" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="OUT (ou escala horizontal) - Em várias instâncias" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=40;" vertex="1" parent="1">
+                    <mxGeometry x="1625" y="360" width="900" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="334" y="460" width="710" height="490" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="APP" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="629" y="500" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Linux SO" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="629" y="560" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="ENI (Placa de rede)" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="674" y="650" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="DISK" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="533" y="650" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="CPU" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="392" y="650" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="RAM" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="815" y="650" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="ENI (EXTRA)" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="674" y="790" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="DISK (EXTRA)" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="533" y="790" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="CPU (EXTRA)" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="392" y="790" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="RAM (EXTRA)" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="815" y="790" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="1370" y="440" width="710" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="APP" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="1665" y="480" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="Linux SO" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="1665" y="540" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="ENI (Placa de rede)" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="1710" y="630" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="DISK" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="1569" y="630" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="CPU" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="1428" y="630" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="RAM" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="1851" y="630" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="1370" y="780" width="710" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="APP" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="1665" y="820" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="Linux SO" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="1665" y="880" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="ENI (Placa de rede)" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="1710" y="970" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="DISK" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="1569" y="970" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="CPU" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="1428" y="970" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="RAM" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="1851" y="970" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="2110" y="440" width="710" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="APP" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="2405" y="480" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="Linux SO" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="2405" y="540" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="ENI (Placa de rede)" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="2450" y="630" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="DISK" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="2309" y="630" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="CPU" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="2168" y="630" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="RAM" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="2591" y="630" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="2120" y="780" width="710" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="APP" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="2415" y="820" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="Linux SO" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="2415" y="880" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="ENI (Placa de rede)" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="2460" y="970" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="DISK" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="2319" y="970" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="CPU" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="2178" y="970" width="141" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="RAM" style="whiteSpace=wrap;html=1;fontSize=20;" vertex="1" parent="1">
+                    <mxGeometry x="2601" y="970" width="141" height="70" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
