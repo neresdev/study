@@ -1,10 +1,13 @@
 package app;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.UUID;
 import java.util.logging.Logger;
 
 import entities.Task;
+import utils.QuestionsUtils;
 
 public class App {
     private static Logger log = Logger.getLogger(App.class.getName());
@@ -12,28 +15,41 @@ public class App {
     public static void main(String[] args){
         var scanner = new Scanner(System.in);
         var choice = "";
+        List<Task> tasks = new LinkedList<>();
         
         while(!choice.equals("5")){
-            System.out.println("Choose one of the options below: ");
-            System.out.println("1 - View all tasks");
-            System.out.println("2 - View a specific task");
-            System.out.println("3 - Create a new task");
-            System.out.println("4 - Delete a task");
-            System.out.println("5 - Exit");
-            
-            choice = scanner.nextLine();
-        }
-        
+            QuestionsUtils.printQuestions(); 
 
+            choice = scanner.nextLine();
+
+            if(choice.equals("1")) printAllTasks(tasks);
+            else if(choice.equals("2")){
+                System.out.println("Enter the ID of the task you want to see the details of");
+                var taskId = scanner.nextLine();
+                printSpecificTask(tasks, taskId);
+            }else if(choice.equals("3")) addTask(scanner, tasks);
+
+        }
        
         scanner.close();
     }
 
-    private static void clearConsole(){
-        System.out.println("\033[H\033[2J");
-        System.out.flush();
+
+    private static void printAllTasks(List<Task> tasks) {
+        tasks.forEach(t -> System.out.println(t.toString()));
     }
-    private static void addTask(Scanner scanner, LinkedList<Task> tasks){
+
+    private static void printSpecificTask(List<Task> tasks, String taskId){
+        var message = "Task found: \n";
+        System.out.println(message + tasks
+            .stream()
+            .filter(t -> t.getId().equals(UUID.fromString(taskId)))
+            .toList()
+            .get(0));
+    }
+
+
+    private static void addTask(Scanner scanner, List<Task> tasks){
         log.info("Enter the description of the new task: ");
         var description = scanner.nextLine();
 

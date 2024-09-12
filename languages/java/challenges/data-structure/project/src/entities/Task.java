@@ -27,10 +27,13 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task [id=" + id + ", description=" + description + ", createdAt=" + createdAt + ", priority=" + priority
-                + ", status=" + status + "]";
+        return "task id =" + id + ", description=" + description + ", createdAt=" + createdAt + ", priority=" + priority
+                + ", status=" + status;
     }
 
+    public UUID getId(){
+        return id;
+    }
     
 
 
