@@ -23,17 +23,28 @@ public class App {
             choice = scanner.nextLine();
 
             if(choice.equals("1")) printAllTasks(tasks);
+
             else if(choice.equals("2")){
                 System.out.println("Enter the ID of the task you want to see the details of");
                 var taskId = scanner.nextLine();
                 printSpecificTask(tasks, taskId);
+
             }else if(choice.equals("3")) addTask(scanner, tasks);
+            else if(choice.equals("4")) {
+                System.out.println("Enter the ID of the task you want to delete");
+                var taskId = scanner.nextLine();
+                deleteTaskById(tasks, taskId);
+            }
 
         }
        
         scanner.close();
     }
 
+
+    private static void deleteTaskById(List<Task> tasks, String taskId){
+        tasks.removeIf(t -> t.getId().equals(UUID.fromString(taskId)));
+    }
 
     private static void printAllTasks(List<Task> tasks) {
         tasks.forEach(t -> System.out.println(t.toString()));
