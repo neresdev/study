@@ -34,8 +34,25 @@ public class Task {
     public UUID getId(){
         return id;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public LocalDate getCreatedAt() {
+        return createdAt;
+    }
+
+    public Priority getPriority() {
+        return priority;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
     
 
+    
 
 
     
