@@ -7,27 +7,38 @@ Funcionalidades exigidas:
 Cadastro de Tarefas:
 
 Cada tarefa terá: id, descrição, data de criação, prioridade (baixa, média, alta) e status (pendente, em progresso, concluída).
-As tarefas devem ser armazenadas em uma Lista (por exemplo, ArrayList ou LinkedList).
-Buscar Tarefas:
 
+# Feature 1 - Armazenamento de tarefas <input type="checkbox" checked=true />
+Armazenar tarefas em uma Lista (por exemplo, ArrayList ou LinkedList).
+
+# Feature 2 - Buscar tarefas <input type="checkbox" />
+
+## Feature 2a - Pelo Id <input type="checkbox" checked=true />
 Implementar a busca de tarefas pelo id utilizando uma Tabela de Hash (HashMap).
-Também deve ser possível buscar tarefas por prioridade (usando uma Fila de Prioridade).
-Remover Tarefas:
 
+## Feature 2b - Por prioridade <input type="checkbox" />
+Buscar tarefas por prioridade (usando uma Fila de Prioridade).
+
+# Feature 3 - Remover tarefas <input type="checkbox" />
 Deve ser possível remover uma tarefa pelo id.
-Histórico de Execução:
 
+# Feature 4 - Histórico de execução <input type="checkbox" />
 Manter um histórico das tarefas concluídas, utilizando uma Pilha. A pilha deve armazenar o id das tarefas e o tempo em que foram concluídas.
-Listar Tarefas por Prioridade:
 
+# Feature 5 - Listar Tarefas por Prioridade <input type="checkbox" />
 As tarefas devem ser listadas de acordo com a prioridade, utilizando uma Fila de Prioridade.
 Tarefas de alta prioridade devem aparecer primeiro, seguidas por tarefas de prioridade média e baixa.
 Atualizar Status da Tarefa:
 
+# Feature 6 - Atualizar o status da tarefa <input type="checkbox" />
 Deve ser possível atualizar o status da tarefa (pendente, em progresso, concluída). Ao concluir uma tarefa, ela deve ser removida da lista principal e adicionada à pilha de histórico.
+
+# Feature 7 - Ordenar tarefas <input type="checkbox" />
 Ordenar Tarefas:
 
 Permitir ao usuário ordenar as tarefas por data de criação ou prioridade utilizando algoritmos de ordenação (por exemplo, Merge Sort ou Quick Sort).
+
+# Extras <input type="checkbox" />
 Regras adicionais:
 O sistema deve ser eficiente em termos de tempo para adicionar, remover e buscar tarefas.
 A complexidade dos algoritmos de busca e ordenação deve ser considerada (por exemplo, a busca por id deve ser O(1) usando a tabela de hash).
