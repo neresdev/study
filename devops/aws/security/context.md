@@ -1,4 +1,4 @@
-# `***Segurança***`
+# `Segurança`
 
 Um serviço bom para segurança é o AWS CloudTrail, com ele é possível os seguintes eventos:
 
