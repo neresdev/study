@@ -17,7 +17,7 @@ public class App {
     } */
 
     public static void main(String[] args){
-        PriorityQueue<Task> priorityQueue = new PriorityQueue<>(2, new TaskComparator());
+        PriorityQueue<Task> priorityQueue = new PriorityQueue<>(new TaskComparator());
         var lowTask = new Task("low task", "low", "pending");
         var mediumTask = new Task("medium task", "medium", "pending");
         var hightTask = new Task("hight task", "hight", "pending");
@@ -28,7 +28,9 @@ public class App {
 
         var comparator = new TaskComparator();
 
-        int a = 0;
+        while(!priorityQueue.isEmpty()){
+            System.out.println(priorityQueue.poll());
+        }
     }
     
 }

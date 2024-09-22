@@ -3,9 +3,19 @@ package entities.enm;
 import exceptions.InvalidPriorityException;
 
 public enum Priority {
-    LOW,
-    MEDIUM,
-    HIGHT;
+    LOW(1),
+    MEDIUM(2),
+    HIGHT(3);
+
+    private int code;
+
+    private Priority(int code){
+        this.code = code;
+    }
+
+    public int getCode(){
+        return code;
+    }
 
     public static Priority getPriority(String priority){
         switch (priority) {
