@@ -22,10 +22,13 @@ public class App {
         var mediumTask = new Task("medium task", "medium", "pending");
         var hightTask = new Task("hight task", "hight", "pending");
         
+        priorityQueue.offer(mediumTask);
         priorityQueue.offer(lowTask);
         priorityQueue.offer(mediumTask);
+        priorityQueue.offer(lowTask);
         priorityQueue.offer(hightTask);
-
+        priorityQueue.offer(hightTask);
+        
         var comparator = new TaskComparator();
 
         while(!priorityQueue.isEmpty()){

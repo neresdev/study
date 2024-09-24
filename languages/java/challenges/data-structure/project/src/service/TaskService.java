@@ -22,13 +22,13 @@ public class TaskService {
 
     private List<Task> tasks;
     private Map<UUID, Task> mapTasks;
-    private PriorityQueue<Task> filaPrioridade;
+    private PriorityQueue<Task> taskQueue;
     private Stack<Task> historico;
 
     public TaskService() {
         tasks = new ArrayList<>();
         mapTasks = new HashMap<>();
-        filaPrioridade = new PriorityQueue<>(new TaskComparator());
+        taskQueue = new PriorityQueue<>(new TaskComparator());
         historico = new Stack<>();
     }
 
@@ -102,7 +102,12 @@ public class TaskService {
 
         tasks.add(task);
         mapTasks.put(task.getId(), task);
+        taskQueue.offer(task);
 
+    }
+
+    private void findByPriority(String priority){
+        
     }
 }
 
