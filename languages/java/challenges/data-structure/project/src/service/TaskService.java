@@ -13,6 +13,7 @@ import java.util.Stack;
 import java.util.UUID;
 import java.util.logging.Logger;
 
+import entities.enm.Priority;
 import entities.task.Task;
 import entities.task.TaskComparator;
 import utils.QuestionsUtils;
@@ -36,7 +37,7 @@ public class TaskService {
         var scanner = new Scanner(System.in);
         var choice = "";
         
-        while(!choice.equals("5")){
+        while(!choice.equals("6")){
             QuestionsUtils.printQuestions(); 
 
             choice = scanner.nextLine();
@@ -48,18 +49,30 @@ public class TaskService {
                 var taskId = scanner.nextLine();
                 printSpecificTask(taskId);
 
-            }else if(choice.equals("3")) addTask(scanner);
-            else if(choice.equals("4")) {
+            }
+            else if(choice.equals("3")){
+                System.out.println("Enter the priority (low/medium/right)");
+                var priority = scanner.nextLine();
+                printTasksByPriority(priority);
+            }
+            else if(choice.equals("4")) addTask(scanner);
+            else if(choice.equals("5")) {
                 System.out.println("Enter the ID of the task you want to delete");
                 var taskId = scanner.nextLine();
-                deleteTaskById( taskId);
+                deleteTaskById(taskId);
             }
 
         }
        
         scanner.close();
     }
-    
+
+    private void printTasksByPriority(String priorityString){
+        var priority = Priority.getPriority(priorityString);
+        var priorityTasks = taskQueue.stream().filter(task -> task.getPriority() == priority).toList();
+        priorityTasks.forEach(System.out::println);
+    }
+
     private void deleteTaskById(String taskId){
         tasks.removeIf(t -> t.getId().equals(UUID.fromString(taskId)));
         mapTasks.remove(UUID.fromString(taskId));
