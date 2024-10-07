@@ -22,7 +22,15 @@ public class Task {
         this.description = description;
         this.createdAt = LocalDate.now();
         this.priority = Priority.getPriority(stringPriority);
-        this.status = Status.getStatus(stringStatus);
+        this.status = Status.fromString(stringStatus);
+    }
+
+    public Task(UUID id, String description, Priority priority, Status status){        
+        this.id = id;
+        this.description = description;
+        this.createdAt = LocalDate.now();
+        this.priority = priority;
+        this.status = status;
     }
 
     @Override
@@ -76,6 +84,10 @@ public class Task {
 
     public Status getStatus() {
         return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
     
 

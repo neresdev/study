@@ -7,7 +7,7 @@ public enum Status {
     IN_PROGRESS,
     DONE;
 
-    public static Status getStatus(String status){
+    public static Status fromString(String status){
         switch (status) {
             case "pending":
                 return PENDING;

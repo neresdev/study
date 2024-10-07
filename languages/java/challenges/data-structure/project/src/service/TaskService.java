@@ -14,6 +14,7 @@ import java.util.UUID;
 import java.util.logging.Logger;
 
 import entities.enm.Priority;
+import entities.enm.Status;
 import entities.task.Task;
 import entities.task.TaskComparator;
 import utils.QuestionsUtils;
@@ -37,7 +38,7 @@ public class TaskService {
         var scanner = new Scanner(System.in);
         var choice = "";
         
-        while(!choice.equals("6")){
+        while(!choice.equals("7")){
             QuestionsUtils.printQuestions(); 
 
             choice = scanner.nextLine();
@@ -57,14 +58,36 @@ public class TaskService {
             }
             else if(choice.equals("4")) addTask(scanner);
             else if(choice.equals("5")) {
+                updateTask(scanner);
+            }
+            else if(choice.equals("6")) {
                 System.out.println("Enter the ID of the task you want to delete");
                 var taskId = scanner.nextLine();
                 deleteTaskById(taskId);
             }
-
         }
-       
         scanner.close();
+    }
+
+    private void updateTask(Scanner sc){
+        System.out.println("Type the id of the task you want to update the status: \n");
+        tasks.forEach(task -> System.out.println(task.getId()));
+        var taskId = sc.nextLine();
+
+        System.out.println("Type the status of the task " + taskId);
+        var newStatus = sc.nextLine();
+
+        int taskIndex = 0;
+        for(int i = 0; i < tasks.size(); i++){
+            if(tasks.get(i).getId() == UUID.fromString(taskId)){
+                taskIndex = i;
+                break;
+            }
+        }
+        
+        var newTask = new Task(tasks.get(taskIndex).getId(), tasks.get(taskIndex).getDescription(), tasks.get(taskIndex).getPriority(), Status.fromString(newStatus));
+                
+        tasks.add(newTask);
     }
 
     private void printTasksByPriority(String priorityString){

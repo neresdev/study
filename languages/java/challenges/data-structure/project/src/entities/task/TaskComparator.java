@@ -4,15 +4,10 @@ import java.util.Comparator;
 
 import entities.enm.Priority;
 
-public class TaskComparator implements Comparator<Task>{
-    
-    // @Override
-    // public int compare(Task task1, Task task2){
-    //     return task1.getPriority().compareTo(task2.getPriority());
-    // }
+public class TaskComparator implements Comparator<Task> {
 
     @Override
-    public int compare(Task task1, Task task2){
+    public int compare(Task task1, Task task2) {
         int a = 0;
         if(task1.getPriority() == Priority.HIGHT) return -1; // insere primeiro
         else if( (task1.getPriority() == Priority.MEDIUM) &&  (task2.getPriority() == Priority.HIGHT)) return 1; // insere depois
