@@ -75,22 +75,24 @@ public class TaskService {
         var taskId = sc.nextLine();
 
         System.out.println("Type the status of the task " + taskId);
-        var newStatus = sc.nextLine();
+        var newStatus = Status.fromString(sc.nextLine().toLowerCase());
 
-        int taskIndex = 0;
-        for(int i = 0; i < tasks.size(); i++){
-            if(tasks.get(i).getId() == UUID.fromString(taskId)){
-                taskIndex = i;
-                break;
+        tasks.forEach(t -> {
+            if(t.getId().equals(UUID.fromString(taskId))){
+                t.setStatus(newStatus);
             }
-        }
+        });
+
+        var modifiedTask = mapTasks.get(UUID.fromString(taskId));
+        modifiedTask.setStatus(newStatus);
+
+        taskQueue.removeIf(task -> task.getId().equals(UUID.fromString(taskId)));
+        taskQueue.offer(new Task(UUID.fromString(taskId), modifiedTask.getDescription(), modifiedTask.getPriority(), newStatus));
+
         
-        var newTask = new Task(tasks.get(taskIndex).getId(), tasks.get(taskIndex).getDescription(), tasks.get(taskIndex).getPriority(), Status.fromString(newStatus));
-                
-        tasks.add(newTask);
     }
 
-    private void printTasksByPriority(String priorityString){
+    private void printTasksByPriority(String priorityString){ // TODO refactor
         var priority = Priority.getPriority(priorityString);
         var priorityTasks = taskQueue.stream().filter(task -> task.getPriority() == priority).toList();
         priorityTasks.forEach(System.out::println);
