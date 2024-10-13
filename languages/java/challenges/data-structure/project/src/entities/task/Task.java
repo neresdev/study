@@ -7,6 +7,7 @@ import entities.enm.Priority;
 import entities.enm.Status;
 
 public class Task {
+
     private UUID id;
     
     private String description;
@@ -16,6 +17,8 @@ public class Task {
     private Priority priority;
     
     private Status status;
+
+    private LocalDate conclusionDate;
     
     public Task(String description, String stringPriority, String stringStatus){        
         this.id = UUID.randomUUID();
@@ -33,10 +36,28 @@ public class Task {
         this.status = status;
     }
 
+    public Task(UUID id, String description, LocalDate createdAt, Priority priority, Status status){        
+        this.id = id;
+        this.description = description;
+        this.createdAt = createdAt;
+        this.priority = priority;
+        this.status = status;
+    }
+    
+
+    public Task(UUID id, String description, Priority priority, Status status, LocalDate conclusionDate){        
+        this.id = id;
+        this.description = description;
+        this.createdAt = LocalDate.now();
+        this.priority = priority;
+        this.status = status;
+        this.conclusionDate = conclusionDate;
+    }
+
     @Override
     public String toString() {
         return "task id =" + id + ", description=" + description + ", createdAt=" + createdAt + ", priority=" + priority
-                + ", status=" + status;
+                + ", status=" + status + ", conclusionDate=" + conclusionDate;
     }
 
     

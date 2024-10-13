@@ -12,7 +12,8 @@ public class QuestionsUtils {
         System.out.println("4 - Create a new task");
         System.out.println("5 - Update task status");
         System.out.println("6 - Delete a task");
-        System.out.println("7 - Exit");
+        System.out.println("7 - Print historic");
+        System.out.println("8 - Exit");
         System.out.println();
     }
 }
