@@ -16,31 +16,31 @@ Armazenar tarefas em uma Lista (por exemplo, ArrayList ou LinkedList).
 ## Feature 2a - Pelo Id <input type="checkbox" checked=true />
 Implementar a busca de tarefas pelo id utilizando uma Tabela de Hash (HashMap).
 
-## Feature 2b - Por prioridade <input type="checkbox" />
+## Feature 2b - Por prioridade <input type="checkbox" checked=true />
 Buscar tarefas por prioridade (usando uma Fila de Prioridade).
 
-# Feature 3 - Remover tarefas <input type="checkbox" />
+# Feature 3 - Remover tarefas <input type="checkbox" checked=true />
 Deve ser possível remover uma tarefa pelo id.
 
-# Feature 4 - Histórico de execução <input type="checkbox" />
+# Feature 4 - Histórico de execução <input type="checkbox" checked=true />
 Manter um histórico das tarefas concluídas, utilizando uma Pilha. A pilha deve armazenar o id das tarefas e o tempo em que foram concluídas.
 
-# Feature 5 - Listar Tarefas por Prioridade <input type="checkbox" />
+# Feature 5 - Listar Tarefas por Prioridade <input type="checkbox" checked=true />
 As tarefas devem ser listadas de acordo com a prioridade, utilizando uma Fila de Prioridade.
 Tarefas de alta prioridade devem aparecer primeiro, seguidas por tarefas de prioridade média e baixa.
 Atualizar Status da Tarefa:
 
-# Feature 6 - Atualizar o status da tarefa <input type="checkbox" />
+# Feature 6 - Atualizar o status da tarefa <input type="checkbox" checked=true />
 Deve ser possível atualizar o status da tarefa (pendente, em progresso, concluída). Ao concluir uma tarefa, ela deve ser removida da lista principal e adicionada à pilha de histórico.
 
-# Feature 7 - Ordenar tarefas <input type="checkbox" />
+# Feature 7 - Ordenar tarefas <input type="checkbox" checked=true />
 Ordenar Tarefas:
 
 Permitir ao usuário ordenar as tarefas por data de criação ou prioridade utilizando algoritmos de ordenação (por exemplo, Merge Sort ou Quick Sort).
 
-# Extras <input type="checkbox" />
+# Extras <input type="checkbox" checked=true />
 Regras adicionais:
-O sistema deve ser eficiente em termos de tempo para adicionar, remover e buscar tarefas.
+O sistema deve ser eficiente em termos de tempo para adicionar, remover e buscar tarefas. OK
 A complexidade dos algoritmos de busca e ordenação deve ser considerada (por exemplo, a busca por id deve ser O(1) usando a tabela de hash).
 Prioridade das tarefas deve ser gerenciada usando uma Heap (min-heap ou max-heap).
 Exemplo de Estruturas de Dados e Algoritmos Utilizados:
