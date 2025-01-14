@@ -45,3 +45,6 @@
 # Deployments
  - O deployment garante a disponibilidade das aplicações (pods), caso atualizamos a imagem do deployment e essa imagem nao for encontrada, o deployment garante a disponibilidade mantendo os pods com a imagem antiga.
  - Quando a nova imagem é "setada"
+
+# Services
+- Os services funcionam como um proxy, onde os pacotes chegam nele e ele passa para os respectivos pods, fazendo o balanceamento de carga usando o algoritmo <i>round-robin</i> por todos os pods existentes.
