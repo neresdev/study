@@ -1,10 +1,10 @@
 # Kubernetes
- - Kubernetes é utilizado para orquestrar os containeres docker e promover ações importantes como
-   - Auto scaling
-   - Service discovery para ajudar os microsserviços a encontrarem uns aos outros
-   - Load balancer
-   - Self healing para verificar a integridade e substitui instancias com falhas
-   - Zero Downtime deployments
+ - Kubernetes é utilizado para orquestrar os containeres docker e promover ações importantes como.
+   - Auto scaling.
+   - Service discovery para ajudar os microsserviços a encontrarem uns aos outros.
+   - Load balancer.
+   - Self healing para verificar a integridade e substitui instancias com falhas.
+   - Zero Downtime deployments.
 
 # Principais comandos:
  - Criar um deployment
@@ -23,28 +23,42 @@
   `kubectl get events --sort-by=.metadata.creationTimestamp`
   
 # Alternativas
- - Diversos provedores de Cloud tem seus próprios serviços de kubernetes em nuvem como o EKS (AWS) GKE (Google Cloud) AKS (Azure)
- - Também temos o docker swarm, mas por conta de sua limitação de escalabilidade e performance, o Kubernetes segue sendo o favorito da comunidade e das empresas
+ - Diversos provedores de Cloud tem seus próprios serviços de kubernetes em nuvem como o EKS (AWS) GKE (Google Cloud) AKS (Azure).
+ - Também temos o docker swarm, mas por conta de sua limitação de escalabilidade e performance, o Kubernetes segue sendo o favorito da comunidade e das empresas.
  
 # Kubernetes como Gerenciador
-- O kubernetes gerencia seus servidor![alt text](image.png)es virtuais
-- Os servidores virtuais são chamados de "nodes" tendo geralmente apenas 1 master node
-- Esse master node é quem gerencia os demais nodes
+- O kubernetes gerencia seus servidor![alt text](image.png)es virtuais.
+- Os servidores virtuais são chamados de "nodes" tendo geralmente apenas 1 master node.
+- Esse master node é quem gerencia os demais nodes.
 
 # Pods
 - Comando para listar os pods é o `kubectl get pods`
 - Para visualizar as informações de um pod `kubectl describe pod <pod>`
-- Ao desejar criar um container, é necessario armazenalo em um pod, conforme a imagem abaixo <br>
+- Ao desejar criar um container, é necessario armazenalo em um pod, conforme a imagem abaixo<br>
 <img src="./images/image.png" width=300 heigth=300></img>
 <br>
-- Um pod pode conter um ou mais containers dentro dele
+- Um pod pode conter um ou mais containers dentro dele.
 
 # Replicasets
  - Replicasets é basicamente o serviço que mantem a quantidade de pods em execução
 
 # Deployments
  - O deployment garante a disponibilidade das aplicações (pods), caso atualizamos a imagem do deployment e essa imagem nao for encontrada, o deployment garante a disponibilidade mantendo os pods com a imagem antiga.
- - Quando a nova imagem é "setada"
+ - Quando a nova imagem é "setada".
 
 # Services
 - Os services funcionam como um proxy, onde os pacotes chegam nele e ele passa para os respectivos pods, fazendo o balanceamento de carga usando o algoritmo <i>round-robin</i> por todos os pods existentes.
+
+# Arquitetura do kubernetes
+- Há um master node
+- Componentes importantes do master node
+  - ETCD -> um banco de dados que armazena todas as operações e informações que precisamos como os dados dos pods, numero de pods, as configurações no geral.
+  - Kube APIserver -> é uma API que recebe os eventos que o node deve executar como alterações de configurações, escalabilidade de pods, etc...
+  - Kube-scheduler -> é o responsável por agendar os pods nos nodes
+  - Kube-controller-manager -> ele assegura que o estado desejado de nosso cluster precisa ser executado
+- Todas as aplicações são executadas nos pods dentro dos <i>worker nodes</i> ou simplesmente chamados de <i>nodes</i> 
+- Componentes presentes nos nodes
+  - Agent node ou kubelet -> é responsável por verificar tudo que está acontecendo no node, e comunica o master node, caso o pod caia por exemplo, esse agente avisará o kube-controller-manager sobre a falha
+  - Kube-proxy -> um componente de rede, ele ajuda a expor os serviços
+  - Container runtime -> basicamente o docker, podman etc
+  - Pods -> responsável por conter as imagens em execução
