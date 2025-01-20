@@ -62,3 +62,16 @@
   - Kube-proxy -> um componente de rede, ele ajuda a expor os serviços
   - Container runtime -> basicamente o docker, podman etc
   - Pods -> responsável por conter as imagens em execução
+
+# Observando os status
+- Para observar os status dos componentes do kubernetes listados acima, basta rodar o comando `kubectl get componentstatuses` ou simplesmente `kubectl get cs` (mas está depreciada desde a versão 1.19)
+- Uma solução ainda válida, é o comando `kubectl get --raw='/readyz?verbose'` ou `curl http://localhost:6443`
+- É possível observar os status dos componentes tambem por via de um dashboard
+    - Para criar esse dashboard, basta executar os seguintes comandos
+    ```shell
+        kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+        kubectl create serviceaccount admin-user -n kubernetes-dashboard
+        kubectl create clusterrolebinding admin-user-binding --clusterrole=cluster-admin --serviceaccount=kubernetes-dashboard:admin-user
+        kubectl -n kubernetes-dashboard create token admin-user
+        kubectl proxy
+    ```
