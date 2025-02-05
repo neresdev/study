@@ -27,7 +27,7 @@
  - Também temos o docker swarm, mas por conta de sua limitação de escalabilidade e performance, o Kubernetes segue sendo o favorito da comunidade e das empresas.
  
 # Kubernetes como Gerenciador
-- O kubernetes gerencia seus servidor![alt text](image.png)es virtuais.
+- O kubernetes gerencia seus servidor![alt text](images/image.png)es virtuais.
 - Os servidores virtuais são chamados de "nodes" tendo geralmente apenas 1 master node.
 - Esse master node é quem gerencia os demais nodes.
 
