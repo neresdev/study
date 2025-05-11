@@ -13,8 +13,13 @@
 <hr />
 
 ## Tipos de IA
+
 LLM: modelo treinado em grandes volumes de texto para entender e gerar linguagem natural, token por token.
+<br />
 VLM: integra texto e imagem para descrever, interpretar ou responder perguntas visuais.
+<br />
 ALM: compreende ou gera linguagem a partir de fala, sons ou música, conectando áudio ao texto.
+<br />
 LCM: foca em sentenças inteiras como unidades semânticas, operando em um nível mais abstrato de conceito.
+<br />
 PLM: novo modelo multimodal open-source da Meta que lê imagem, vídeo e texto com foco em compreensão detalhada
