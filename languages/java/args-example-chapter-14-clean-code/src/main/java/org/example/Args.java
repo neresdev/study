@@ -6,7 +6,7 @@ import java.text.ParseException;
 import java.util.*;
 
 public class Args {
-    private String schema;
+    private final String schema;
     String[] args;
     private boolean valid = true;
     private Set<Character> unexpectedArguments = new TreeSet<Character>() ;
@@ -18,8 +18,8 @@ public class Args {
     private char errorArgumentId = '\0';
     private String errorParameter = "TILT";
     private ErrorCode errorCode = ErrorCode.OK;
-    private enum ErrorCode {
-        OK, MISSING_STRING, MISSING_INTEGER, INVALID_INTEGER, UNEXPECTED_ARGUMENT}
+    private enum ErrorCode {OK, MISSING_STRING, MISSING_INTEGER, INVALID_INTEGER, UNEXPECTED_ARGUMENT }
+
     public Args (String schema, String[] args) throws ParseException {
         this.schema = schema;
         this.args = args;
@@ -41,7 +41,7 @@ public class Args {
         for (String element : schema.split(",")) {
             if (element.length() > 0) {
                 String trimmedElement = element.trim();
-                parseSchemaElement (trimmedElement) ;
+                parseSchemaElement(trimmedElement) ;
             }
         }
          return true;
@@ -196,19 +196,13 @@ public class Args {
     }
 
     public String errorMessage() throws Exception {
-        switch (errorCode) {
-            case OK:
-                throw new Exception("TILT: Should not get here.");
-            case UNEXPECTED_ARGUMENT:
-                return unexpectedArgumentMessage();
-            case MISSING_STRING:
-                return "Could not find string parameter for -%c.".formatted(errorArgumentId);
-            case INVALID_INTEGER:
-                return "Argument -%c expects an integer but was '%s'.".formatted(errorArgumentId, errorParameter);
-            case MISSING_INTEGER:
-                return "Could not find integer parameter for -%c.".formatted(errorArgumentId);
-        }
-        return "";
+        return switch (errorCode) {
+            case UNEXPECTED_ARGUMENT -> unexpectedArgumentMessage();
+            case MISSING_STRING -> "Could not find string parameter for -%c.".formatted(errorArgumentId);
+            case INVALID_INTEGER -> "Argument -%c expects an integer but was '%s'.".formatted(errorArgumentId, errorParameter);
+            case MISSING_INTEGER -> "Could not find integer parameter for -%c.".formatted(errorArgumentId);
+            default -> throw new Exception("TILT: Should not get here.");
+        };
     }
 
     private String unexpectedArgumentMessage() {
