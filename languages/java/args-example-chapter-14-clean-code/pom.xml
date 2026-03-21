@@ -10,16 +10,12 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.fitnesse</groupId>
-            <artifactId>fitnesse</artifactId>
-            <version>20241207</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.objectmentor</groupId>
-            <artifactId>fitlibrary</artifactId>
-            <version>20080702</version> <!-- Example legacy version -->
-        </dependency>
     </dependencies>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
