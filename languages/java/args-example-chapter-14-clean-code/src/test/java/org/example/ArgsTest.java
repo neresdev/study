@@ -1,8 +1,7 @@
 package org.example;
 
+import org.example.exceptions.ArgsException;
 import org.junit.Test;
-
-import java.text.ParseException;
 
 import static org.junit.Assert.*;
 
@@ -10,28 +9,28 @@ import static org.junit.Assert.*;
 public class ArgsTest {
 
     @Test
-    public void shouldReturnloggingTrue() throws ParseException {
+    public void shouldReturnloggingTrue() throws ArgsException {
         final var stringArgs = new String[]{"-l"};
         final var args = new Args("l", stringArgs);
         assertTrue(args.getBoolean('l'));
     }
 
     @Test
-    public void shouldReturnFalseWhenEmptySchema() throws ParseException {
+    public void shouldReturnFalseWhenEmptySchema() throws ArgsException {
         final var stringArgs = new String[]{};
         final var args = new Args("", stringArgs);
         assertFalse(args.getBoolean('l'));
     }
 
     @Test
-    public void shouldReturnPort() throws ParseException {
+    public void shouldReturnPort() throws ArgsException {
         final var stringArgs = new String[]{"-p", "8080"};
         final var args = new Args("p#", stringArgs);
         assertEquals(8080, args.getInt('p'));
     }
 
     @Test
-    public void shouldReturnDirectory() throws ParseException {
+    public void shouldReturnDirectory() throws ArgsException {
         final var directory = "/home/user/process";
         final var stringArgs = new String[]{"-d", directory};
         final var args = new Args("d*", stringArgs);
@@ -44,7 +43,7 @@ public class ArgsTest {
     public void whenInvalidArgumentFormatThenThrowParseException() {
         final var directory = "/home/user/process";
         final var stringArgs = new String[]{"-d", directory};
-        final var exception = assertThrows(ParseException.class, () -> new Args("d%", stringArgs));
+        final var exception = assertThrows(ArgsException.class, () -> new Args("d%", stringArgs));
 
         final var expectedMessage = "Argument: d has invalid format: %.";
 
@@ -52,10 +51,10 @@ public class ArgsTest {
     }
 
     @Test
-    public void whenBadCharacterThenThrowParseException() throws ParseException {
+    public void whenBadCharacterThenThrowParseException() throws ArgsException {
         final var directory = "/home/user/process";
         final var stringArgs = new String[]{"-d", directory};
-        final var exception = assertThrows(ParseException.class, () -> new Args("12", stringArgs));
+        final var exception = assertThrows(ArgsException.class, () -> new Args("12", stringArgs));
 
         final var expectedMessage = "Bad character: 1in Args format: 12";
 
@@ -82,7 +81,7 @@ public class ArgsTest {
     }
 
     @Test
-    public void whenMoreArgumentsThanExpectedThenReturnErrorMessage() throws ParseException {
+    public void whenMoreArgumentsThanExpectedThenReturnErrorMessage() throws ArgsException {
         final var stringArgs = new String[]{"-l", "-p", "8080", "otherParameter"};
         final var args = new Args("l,p#", stringArgs);
         final var exception = assertThrows(Exception.class, args::errorMessage);
@@ -95,9 +94,9 @@ public class ArgsTest {
     @Test
     public void whenStringArgumentSentByIntegerThenReturnErrorMessage() throws Exception {
         final var stringArgs = new String[]{"-p", "a"};
-        final var args = new Args("p#", stringArgs);
-        final var expectedMessage = "Argument -p expects an integer but was 'a'.";
-        assertEquals(expectedMessage, args.errorMessage());
+        final var exception = assertThrows(NumberFormatException.class, () -> new Args("p#", stringArgs));
+        final var expectedMessage = "For input string: \"a\"";
+        assertEquals(expectedMessage, exception.getMessage());
     }
 
     @Test
@@ -109,7 +108,7 @@ public class ArgsTest {
     }
 
     @Test
-    public void shouldReturnNumberOfParameters() throws ParseException {
+    public void shouldReturnNumberOfParameters() throws ArgsException {
         final var stringArgs = new String[]{"-l", "-p", "8080", "-d", "/processor"};
         final var arg = new Args("l,p#,d*", stringArgs);
 
@@ -130,7 +129,7 @@ public class ArgsTest {
     }
 
     @Test
-    public void shouldReturnEmptyUsage() throws ParseException {
+    public void shouldReturnEmptyUsage() throws ArgsException {
         final var stringArgs = new String[]{};
         final var arg = new Args("", stringArgs);
         final var usage = arg.usage();
@@ -138,6 +137,23 @@ public class ArgsTest {
         assertTrue(usage.isEmpty());
     }
 
+    @Test
+    public void testSimpleDoublePresent() throws ArgsException {
+        Args args = new Args("x##", new String[] {"-x", "42.3"});
+        assertTrue(args.isValid());
+        assertEquals(1, args.cardinality());
+        assertTrue(args.has('x'));
+        assertEquals(42.3, args.getDouble('x'), .001);
+    }
 
+    @Test
+    public void testMissingDouble() throws Exception {
+        Args args = new Args("x##", new String[] {"-x"});
+        assertFalse(args.isValid());
+        assertEquals(0, args.cardinality());
+        assertFalse(args.has('x'));
+        assertEquals(0.0, args.getDouble('x'), 0.01);
+        assertEquals("Could not find double parameter for -x.", args.errorMessage());
+    }
 
 }
