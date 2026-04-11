@@ -22,16 +22,20 @@ public class ComparisonCompactor {
     }
 
     public String compact(String message) {
-        if (expected == null || actual == null || areStringsEqual())
+        if (shouldNotCompact())
             // Was Assert.format
             return Assert.format(message, expected, actual);
 
         findCommonPrefix();
         findCommonSuffix();
-        String expected = compactString(this.expected);
-        String actual = compactString(this.actual);
+        String compactExpected = compactString(expected);
+        String compactActual = compactString(actual);
         // Was Assert.format
-        return Assert.format(message, expected, actual);
+        return Assert.format(message, compactExpected, compactActual);
+    }
+
+    private boolean shouldNotCompact() {
+        return expected == null || actual == null || areStringsEqual();
     }
 
     private String compactString(String source) {
