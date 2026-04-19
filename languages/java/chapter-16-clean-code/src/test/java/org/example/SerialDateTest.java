@@ -21,7 +21,7 @@ public class SerialDateTest extends TestCase {
         assertEquals(-1, stringToWeekdayCode("Hello"));
         assertEquals(MONDAY, stringToWeekdayCode("Monday"));
         assertEquals(MONDAY, stringToWeekdayCode("Mon"));
-        //todo    assertEquals(MONDAY,stringToWeekdayCode("monday"));
+        assertEquals(MONDAY,stringToWeekdayCode("monday"));
         //    assertEquals(MONDAY,stringToWeekdayCode("MONDAY"));
         //    assertEquals(MONDAY, stringToWeekdayCode("mon"));
 
