@@ -498,12 +498,13 @@ public abstract class SerialDate implements Comparable,
 
         // now search through the month names...
         if ((result < 1) || (result > 12)) {
+            result = -1;
             for (int i = 0; i < monthNames.length; i++) {
-                if (s.equals(shortMonthNames[i])) {
+                if (s.equalsIgnoreCase(shortMonthNames[i])) {
                     result = i + 1;
                     break;
                 }
-                if (s.equals(monthNames[i])) {
+                if (s.equalsIgnoreCase(monthNames[i])) {
                     result = i + 1;
                     break;
                 }
@@ -713,7 +714,7 @@ public abstract class SerialDate implements Comparable,
         // find the date...
         final int adjust;
         final int baseDOW = base.getDayOfWeek();
-        if (baseDOW > targetWeekday) {
+        if (baseDOW >= targetWeekday) {
             adjust = 7 + Math.min(0, targetWeekday - baseDOW);
         } else {
             adjust = Math.max(0, targetWeekday - baseDOW);
@@ -742,13 +743,11 @@ public abstract class SerialDate implements Comparable,
         }
 
         // find the date...
-        final int baseDOW = base.getDayOfWeek();
-        int adjust = -Math.abs(targetDOW - baseDOW);
-        if (adjust >= 4) {
-            adjust = 7 - adjust;
-        }
-        if (adjust <= -4) {
-            adjust = 7 + adjust;
+        int delta = targetDOW - base.getDayOfWeek();
+        int positiveDelta = delta + 7;
+        int adjust = positiveDelta % 7;
+        if (adjust > 3) {
+            adjust -= 7;
         }
         return SerialDate.addDays(adjust, base);
 
@@ -789,7 +788,7 @@ public abstract class SerialDate implements Comparable,
             case SerialDate.LAST_WEEK_IN_MONTH:
                 return "Last";
             default:
-                return "SerialDate.weekInMonthToString(): invalid code.";
+                throw new IllegalArgumentException();
         }
 
     }
@@ -812,7 +811,7 @@ public abstract class SerialDate implements Comparable,
             case SerialDate.FOLLOWING:
                 return "Following";
             default:
-                return "ERROR : Relative To String";
+                throw new IllegalArgumentException();
         }
 
     }
